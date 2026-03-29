@@ -2,30 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour, IReusabelObject
 {
+    PlayerController PC;
     public int atk;
     public GameObject hitVFX;
 
+    private void Start()
+    {
+        PC = PlayerController.instance;
+    }
+    public string GetKey()
+    {
+        return "EnemyBullet";
+    }
+    public void ResetGameObject()
+    {
+        
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerController PC = collision.gameObject.GetComponent<PlayerController>();
-            if (collision.gameObject.tag == "Player" && !PC.isDefending)
+            //PlayerController PC = collision.gameObject.GetComponent<PlayerController>();
+            if (collision.gameObject.CompareTag("Player") && !PC.isDefending)
             {
                 PC.HP -= atk;
-                Instantiate(hitVFX, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                GameObject v = ObjectPoolManager.instance.GetObject("SelfDestroy");
+                v.transform.position = transform.position;
+                //DestroyS();
             }
-            else if (collision.gameObject.tag == "Player" && PC.isDefending)
+            else if (collision.gameObject.CompareTag("Player") && PC.isDefending)
             {
-                Destroy(gameObject);
+                //DestroyS();
             }
+            DestroyS();
         }
-        if (collision.gameObject.name == "BulletRemover")
+        else if (collision.gameObject.CompareTag("BulletRemover"))
         {
-            Destroy(gameObject);
+            DestroyS();
         }
+    }
+
+    void DestroyS()
+    {
+        
+        ObjectPoolManager.instance.PutObject("EnemyBullet", gameObject);
+        //gameObject.SetActive(false);
     }
 }

@@ -2,12 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BurnVFX : MonoBehaviour
+public class BurnVFX : MonoBehaviour, IReusabelObject
 {
     public bool Burn = false;
     public float BurnTimer;
     public float BurnCoolDown;
     public int atk;
+
+    public string GetKey()
+    {
+        return "BurnVFX";
+    }
+    public void ResetGameObject()
+    {
+        Invoke("StopBurnning", 3);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +25,6 @@ public class BurnVFX : MonoBehaviour
 
     void StopBurnning()
     {
-        Destroy(gameObject);
-    }
-    void Update()
-    {
-
+        ObjectPoolManager.instance.PutObject("BurnVFX", gameObject);
     }
 }

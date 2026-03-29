@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet3 : MonoBehaviour
+public class PlayerBullet3 : MonoBehaviour,IReusabelObject
 {
     public int atk;
     public GameObject PlayerBullet3a;
+    public string GetKey()
+    {
+        return "PlayerBullet3";
+    }
+    public void ResetGameObject()
+    {
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("c");
+            //Debug.Log("c");
             EnemyScript e = collision.gameObject.GetComponent<EnemyScript>();
             e.HP -= atk;
             GameObject a = Instantiate(PlayerBullet3a, transform.position, Quaternion.identity);

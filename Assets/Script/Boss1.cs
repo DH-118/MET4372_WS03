@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Boss1 : MonoBehaviour
+public class Boss1 : EnemyScript
 {
-    public float HP;
+    /*public float HP;
     public int MinusHP;
     public GameObject hitVFXPrefabs;
     public bool playStartAnim;
     public GameObject bullet_1;
     protected float ShootTimer;
-    public float ShootCoolDown;
+    public float ShootCoolDown;*/
     private CameraScript Cam;
     private Wave wave;
     public Image healthBar1;
     public GameObject healthBar2Panel;
     public Image healthBar2;
 
-    public void WaveStart()
+    /*public void WaveStart()
     {
         if (playStartAnim)
         {
             GetComponent<Animator>().Play("BossInAnim");
         }
-    }
+    }*/
 
     private void Start()
     {
@@ -37,7 +37,6 @@ public class Boss1 : MonoBehaviour
         healthBar1.fillAmount = (HP - 100) / 100f;
         healthBar2.fillAmount = HP / 100f;
         Atk();
-
         if (HP <= 0)
         {
             Destroy(gameObject);
@@ -48,44 +47,50 @@ public class Boss1 : MonoBehaviour
 
     void Atk()
     {
-        /*
-        if (ShootTimer > 0)
+        /*if (ShootTimer > 0)
         {
             ShootTimer -= Time.deltaTime;
         }*/
-
         //if (ShootTimer <= 0)
         {
-            GameObject a = Instantiate(bullet_1, transform.position, Quaternion.identity);
-            a.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
+             GameObject a = ObjectPoolManager.instance.GetObject("EnemyBullet");
+             a.transform.position = transform.position;
+             a.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
 
-            GameObject b = Instantiate(bullet_1, transform.position, Quaternion.identity);
-            b.GetComponent<Rigidbody2D>().velocity = new Vector2(-10, 0);
+             GameObject b = ObjectPoolManager.instance.GetObject("EnemyBullet");
+             b.transform.position = transform.position;
+             b.GetComponent<Rigidbody2D>().velocity = new Vector2(-10, 0);
 
-            GameObject c = Instantiate(bullet_1, transform.position, Quaternion.identity);
-            c.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 10);
+             GameObject c = ObjectPoolManager.instance.GetObject("EnemyBullet");
+             c.transform.position = transform.position; 
+             c.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 10);
 
-            GameObject d = Instantiate(bullet_1, transform.position, Quaternion.identity);
-            d.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -10);
+             GameObject d = ObjectPoolManager.instance.GetObject("EnemyBullet");
+             d.transform.position = transform.position;
+             d.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -10);
 
-            GameObject f = Instantiate(bullet_1, transform.position, Quaternion.identity);
-            f.GetComponent<Rigidbody2D>().velocity = new Vector2(7.5f, 7.5f);
+             GameObject f = ObjectPoolManager.instance.GetObject("EnemyBullet");
+             f.transform.position = transform.position;
+             f.GetComponent<Rigidbody2D>().velocity = new Vector2(7.5f, 7.5f);
 
-            GameObject g = Instantiate(bullet_1, transform.position, Quaternion.identity);
-            g.GetComponent<Rigidbody2D>().velocity = new Vector2(7.5f, -7.5f);
+             GameObject g = ObjectPoolManager.instance.GetObject("EnemyBullet");
+             g.transform.position = transform.position;
+             g.GetComponent<Rigidbody2D>().velocity = new Vector2(7.5f, -7.5f);
 
-            GameObject h = Instantiate(bullet_1, transform.position, Quaternion.identity);
-            h.GetComponent<Rigidbody2D>().velocity = new Vector2(-7.5f, 7.5f);
+             GameObject h = ObjectPoolManager.instance.GetObject("EnemyBullet");
+             h.transform.position = transform.position;
+             h.GetComponent<Rigidbody2D>().velocity = new Vector2(-7.5f, 7.5f);
 
-            GameObject i = Instantiate(bullet_1, transform.position, Quaternion.identity);
-            i.GetComponent<Rigidbody2D>().velocity = new Vector2(-7.5f, -7.5f);
+             GameObject i = ObjectPoolManager.instance.GetObject("EnemyBullet");
+             i.transform.position = transform.position;
+             i.GetComponent<Rigidbody2D>().velocity = new Vector2(-7.5f, -7.5f);
         }
         //ShootTimer = ShootCoolDown;
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    /*public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlayerBullet")
+        if (collision.gameObject.CompareTag("PlayerBullet"))
         {
             PlayerBullet p = collision.gameObject.GetComponent<PlayerBullet>();
             HP -= p.atk;
@@ -93,7 +98,7 @@ public class Boss1 : MonoBehaviour
             Instantiate(p.HitVFX, collision.gameObject.transform.position, Quaternion.identity);
         }
 
-        if (collision.gameObject.tag == "PlayerBullet2")
+        if (collision.gameObject.CompareTag("PlayerBullet2"))
         {
             PlayerBullet2 q = collision.gameObject.GetComponent<PlayerBullet2>();
             HP -= q.atk;
@@ -101,20 +106,20 @@ public class Boss1 : MonoBehaviour
             Instantiate(q.BurnVFX, collision.gameObject.transform.position, Quaternion.identity);
         }
 
-        if (collision.gameObject.tag == "Burn")
+        if (collision.gameObject.CompareTag("Burn"))
         {
             BurnVFX BF = collision.gameObject.GetComponent<BurnVFX>();
             //Debug.Log("stk");
             HP -= BF.atk;
         }
 
-        if (collision.gameObject.tag == "PlayerBullet4")
+        if (collision.gameObject.CompareTag("PlayerBullet4"))
         {
             PlayerBullet4 s = collision.gameObject.GetComponent<PlayerBullet4>();
             HP -= s.atk;
         }
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             PlayerController PC = collision.gameObject.GetComponent<PlayerController>();
             PC.HP -= MinusHP;
@@ -124,5 +129,5 @@ public class Boss1 : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    }*/
 }

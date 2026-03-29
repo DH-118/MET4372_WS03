@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance; 
     public float FlySpeed;
     Rigidbody2D rb;
     public Weapon weapon;
@@ -19,6 +20,12 @@ public class PlayerController : MonoBehaviour
     public GameObject ShieldInUseIcon;
     public GameObject ShieldCDIcon;
 
+    Vector2 move;
+    Vector2 pos;
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -29,24 +36,32 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        if (transform.localPosition.x <= -8)
+        move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        
+
+        if(move!= Vector2.zero)
         {
-            move.x = Mathf.Max(0, move.x);
+            pos = transform.localPosition;
+            if (pos.x <= -8)
+            {
+                move.x = Mathf.Max(0, move.x);
+            }
+            else if (pos.x > 8)
+            {
+                move.x = Mathf.Min(0, move.x);
+            }
+            if (pos.y > 4.4f)
+            {
+                move.y = Mathf.Min(0, move.y);
+            }
+            else if (pos.y < -4.4f)
+            {
+                move.y = Mathf.Max(0, move.y);
+            }
+            rb.velocity = move * FlySpeed;
         }
-        if (transform.localPosition.x > 8)
-        {
-            move.x = Mathf.Min(0, move.x);
-        }
-        if (transform.localPosition.y > 4.4f)
-        {
-            move.y = Mathf.Min(0, move.y);
-        }
-        if (transform.localPosition.y < -4.4f)
-        {
-            move.y = Mathf.Max(0, move.y);
-        }
-        rb.velocity = move * FlySpeed;
+
+        
 
         if (Input.GetKey(KeyCode.F))
         {

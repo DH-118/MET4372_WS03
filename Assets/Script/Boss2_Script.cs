@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Boss2_Script : MonoBehaviour
+public class Boss2_Script : EnemyScript
 {
-    public float HP;
+    /*public float HP;
     public int MinusHP;
-    public GameObject hitVFXPrefabs;
+    public GameObject hitVFXPrefabs;*/
     public GameObject boss2;
     public GameObject FAtk;
     public GameObject EM;
-    public GameObject bullet_1;
+    //public GameObject bullet_1;
     public Image healthBar1;
     public GameObject healthBar2Panel;
     public Image healthBar2;
@@ -36,7 +36,7 @@ public class Boss2_Script : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "PlayerBullet")
         {
@@ -76,7 +76,7 @@ public class Boss2_Script : MonoBehaviour
         if (collision.gameObject.name == "EnemyRemover")
         {
             Destroy(gameObject);
-        }
+        }*/
         //float hp = GetComponent<EnemyScript>().HP;
        /* if (HP  <= 0)
             {
@@ -87,8 +87,7 @@ public class Boss2_Script : MonoBehaviour
                 Destroy(gameObject);
             }*/
         //}
-
-    }
+    //}
     public void RandomAction()
     {
         int randNum = Random.Range(0, 100);

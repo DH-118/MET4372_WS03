@@ -12,6 +12,8 @@ TagManager:
   - PlayerBullet2
   - Burn
   - PlayerBullet3
+  - EnemyRemover
+  - WaveActivator
   layers:
   - Default
   - TransparentFX

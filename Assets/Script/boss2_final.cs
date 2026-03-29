@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class boss2_final : MonoBehaviour
+public class boss2_final : EnemyScript
 {
     public float hp;
-    public int MinusHP;
+    //public int MinusHP;
     public GameObject Atk1;
     public GameObject Atk2;
     public GameObject EM;
@@ -27,9 +27,9 @@ public class boss2_final : MonoBehaviour
         healthBar1.fillAmount = (hp - 100) / 100f;
         healthBar2.fillAmount = hp / 100f;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlayerBullet")
+        /*if (collision.gameObject.tag == "PlayerBullet")
         {
             PlayerBullet p = collision.gameObject.GetComponent<PlayerBullet>();
             hp -= p.atk;
@@ -62,8 +62,8 @@ public class boss2_final : MonoBehaviour
         {
             PlayerController PC = collision.gameObject.GetComponent<PlayerController>();
             PC.HP -= MinusHP;
-        }
-
+        }*/
+        base.OnTriggerEnter2D(collision);
         if (hp <= 0)
         {
             Destroy(gameObject);

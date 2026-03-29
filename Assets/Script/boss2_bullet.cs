@@ -10,13 +10,13 @@ public class boss2_bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {            
         PlayerController PC = collision.gameObject.GetComponent<PlayerController>();
-        if (collision.gameObject.tag == "Player" && !PC.isDefending)
+        if (collision.gameObject.CompareTag("Player") && !PC.isDefending)
         {
             PC.HP -= atk;
             Instantiate(hitVFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.tag == "Player" && PC.isDefending)
+        else if (collision.gameObject.CompareTag("Player") && PC.isDefending)
         {
             Destroy(gameObject);
         }

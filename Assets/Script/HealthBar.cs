@@ -8,12 +8,6 @@ public class HealthBar : MonoBehaviour
     public Image healthBar;
     public float HealthAmount;
     public GameObject HealthCarrier;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

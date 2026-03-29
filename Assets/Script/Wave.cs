@@ -13,7 +13,7 @@ public class Wave : MonoBehaviour
     {
         instance = this;
     }
-    /*public void Update()
+    /*void Update()
     {
         for (int i = 0; i < enemy.Count; i++)
         {
@@ -30,13 +30,11 @@ public class Wave : MonoBehaviour
                 CameraScript.instance.isPause = false;
             }
             Destroy(gameObject);
-        }
-    }*/
-
-
+        
+    }}*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "WaveActivator")
+        if (collision.gameObject.CompareTag("WaveActivator"))
         {
             ActivateWave();
         }
@@ -53,7 +51,7 @@ public class Wave : MonoBehaviour
         for (int i = 0; i < enemy.Count; i++)
         {
             enemy[i].SetActive(true);
-            enemy[i].GetComponent<EnemyScript>().WaveStart();
+            //enemy[i].GetComponent<EnemyScript>().WaveStart();
         }
     }
 }

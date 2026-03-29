@@ -8,13 +8,19 @@ public class Weapon2 : Weapon
     {
         if (ShootTimer <= 0)
         {
-            GameObject b = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
+            GameObject b = ObjectPoolManager.instance.GetObject("PlayerBullet");
+            b.transform.position = transform.position;
+            //GameObject b = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
             b.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
 
-            b = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
+            b = ObjectPoolManager.instance.GetObject("PlayerBullet");
+            b.transform.position = transform.position;
+            //b = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
             b.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 5);
 
-            b = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
+            b = ObjectPoolManager.instance.GetObject("PlayerBullet");
+            b.transform.position = transform.position;
+            //b = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
             b.GetComponent<Rigidbody2D>().velocity = new Vector2(10, -5);
             ShootTimer = ShootCoolDown;
         }
