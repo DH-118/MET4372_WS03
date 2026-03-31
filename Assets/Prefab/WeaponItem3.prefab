@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6694291855309618772}
   - component: {fileID: 3882640038361902829}
   - component: {fileID: 768800950564321033}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponItem3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPrefabs: {fileID: 7672817122811976620, guid: 6155c765482d4f74e9a839801ba976d8, type: 3}
   weaponRenderer: {fileID: 0}
+  visiblaDist: 0
 --- !u!70 &768800950564321033
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

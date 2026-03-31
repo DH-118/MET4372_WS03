@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6526535369734421623}
   - component: {fileID: 8742682193032612682}
   - component: {fileID: 1063414932399963860}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerBulletHitVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

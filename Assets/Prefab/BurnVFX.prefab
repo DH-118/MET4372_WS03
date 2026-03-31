@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5401286937426926576}
   - component: {fileID: -8146631311454705229}
   - component: {fileID: 8477598422377703415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BurnVFX
   m_TagString: Burn
   m_Icon: {fileID: 0}

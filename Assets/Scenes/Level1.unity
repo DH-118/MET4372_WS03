@@ -315,7 +315,7 @@ GameObject:
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!114 &51239877
 MonoBehaviour:
@@ -359,7 +359,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!70 &51239879
@@ -1003,7 +1003,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!61 &424630925
 BoxCollider2D:
@@ -1239,7 +1239,7 @@ GameObject:
   - component: {fileID: 457643359}
   - component: {fileID: 457643362}
   - component: {fileID: 457643363}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boss1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1379,7 +1379,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!70 &457643363
@@ -2131,6 +2131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponItem3
       objectReference: {fileID: 0}
+    - target: {fileID: 7951065575326789287, guid: 3ebf887889cfb9b48a6bc0a50eabae9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2147,6 +2151,10 @@ PrefabInstance:
     - target: {fileID: 635062108788658021, guid: a8c918adea3876b498143a6d87aaf9fe, type: 3}
       propertyPath: m_Name
       value: WeaponItem1
+      objectReference: {fileID: 0}
+    - target: {fileID: 635062108788658021, guid: a8c918adea3876b498143a6d87aaf9fe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 773868674848530691, guid: a8c918adea3876b498143a6d87aaf9fe, type: 3}
       propertyPath: visiblaDist
@@ -2213,6 +2221,10 @@ PrefabInstance:
     - target: {fileID: 412787897576625293, guid: 9ca32ebe9df07194e81436e40e01f576, type: 3}
       propertyPath: m_Name
       value: WeaponItem2
+      objectReference: {fileID: 0}
+    - target: {fileID: 412787897576625293, guid: 9ca32ebe9df07194e81436e40e01f576, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3232643576844342268, guid: 9ca32ebe9df07194e81436e40e01f576, type: 3}
       propertyPath: visiblaDist
@@ -2332,7 +2344,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!70 &1031113175
@@ -2571,7 +2583,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1191393563
 MonoBehaviour:
@@ -2808,7 +2820,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1262245562
 SpriteRenderer:
@@ -3184,7 +3196,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1458340359
 MonoBehaviour:
@@ -3835,7 +3847,7 @@ GameObject:
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!114 &1834028467
 MonoBehaviour:
@@ -3879,7 +3891,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!70 &1834028469
@@ -4360,7 +4372,7 @@ GameObject:
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!114 &2063604995
 MonoBehaviour:
@@ -4404,7 +4416,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!70 &2063604997
@@ -4564,6 +4576,10 @@ PrefabInstance:
     - target: {fileID: 7072299476263435894, guid: 6e1853ee4842e0c4c9b1007db0fefe01, type: 3}
       propertyPath: m_Name
       value: WeaponItem5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072299476263435894, guid: 6e1853ee4842e0c4c9b1007db0fefe01, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7072299476263435895, guid: 6e1853ee4842e0c4c9b1007db0fefe01, type: 3}
       propertyPath: visiblaDist
